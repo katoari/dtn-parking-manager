@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>785259682376-92nkai36pm7gu31e62ab7k5n6gnbjjps.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.785259682376-92nkai36pm7gu31e62ab7k5n6gnbjjps</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAKq2rqcw6IUWQhu6_Sfc7XBeXEChsixGI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>785259682376</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.DTN-Manila-Parking-Manager</string>
+	<key>PROJECT_ID</key>
+	<string>dtn-parking-manager</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dtn-parking-manager.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:785259682376:ios:d717dba0d6afa1c544567d</string>
+	<key>DATABASE_URL</key>
+	<string>https://dtn-parking-manager-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

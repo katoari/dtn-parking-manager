@@ -7,18 +7,101 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F013B7B182FB259D2061D9A /* Pods_DTN_Manila_Parking_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816D766B6BF2E3C464EA4432 /* Pods_DTN_Manila_Parking_Manager.framework */; };
 		6189DDC32978352E00D61ECF /* DTN_Manila_Parking_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6189DDC22978352E00D61ECF /* DTN_Manila_Parking_ManagerApp.swift */; };
 		6189DDC52978352E00D61ECF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6189DDC42978352E00D61ECF /* ContentView.swift */; };
-		6189DDC72978352F00D61ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6189DDC62978352F00D61ECF /* Assets.xcassets */; };
 		6189DDCA2978352F00D61ECF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6189DDC92978352F00D61ECF /* Preview Assets.xcassets */; };
+		6189DDD4297836CE00D61ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6189DDD3297836CE00D61ECF /* Assets.xcassets */; };
+		61C633D029783D4C0054618A /* ParkingSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633CE29783D4B0054618A /* ParkingSpace.swift */; };
+		61C633D129783D4C0054618A /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633CF29783D4C0054618A /* Slot.swift */; };
+		61C633D329783D540054618A /* Occupant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633D229783D540054618A /* Occupant.swift */; };
+		61C633D929783DB90054618A /* NavigationStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633D429783DB60054618A /* NavigationStateManager.swift */; };
+		61C633DA29783DB90054618A /* OccupantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633D529783DB70054618A /* OccupantsViewModel.swift */; };
+		61C633DB29783DB90054618A /* ParkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633D629783DB80054618A /* ParkingViewModel.swift */; };
+		61C633DC29783DB90054618A /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633D729783DB80054618A /* FormValidation.swift */; };
+		61C633DD29783DB90054618A /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633D829783DB90054618A /* DataViewModel.swift */; };
+		61C633E729783E450054618A /* TimeKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633E129783E420054618A /* TimeKeeper.swift */; };
+		61C633E829783E450054618A /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633E229783E420054618A /* DataHandler.swift */; };
+		61C633E929783E450054618A /* FirestoreDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633E329783E430054618A /* FirestoreDatabase.swift */; };
+		61C633EA29783E450054618A /* ColorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633E429783E440054618A /* ColorHandler.swift */; };
+		61C633EB29783E450054618A /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633E529783E450054618A /* NavigationState.swift */; };
+		61C633F529783EE40054618A /* ParkingSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633F229783EE30054618A /* ParkingSpaces.swift */; };
+		61C633F629783EE40054618A /* Occupants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633F329783EE40054618A /* Occupants.swift */; };
+		61C633F729783EE40054618A /* Slots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633F429783EE40054618A /* Slots.swift */; };
+		61C633FF29783EF70054618A /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633F829783EF20054618A /* General.swift */; };
+		61C6340029783EF70054618A /* Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633F929783EF30054618A /* Conditions.swift */; };
+		61C6340129783EF70054618A /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633FA29783EF40054618A /* Icons.swift */; };
+		61C6340229783EF70054618A /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633FB29783EF50054618A /* Labels.swift */; };
+		61C6340329783EF70054618A /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633FC29783EF50054618A /* Links.swift */; };
+		61C6340429783EF70054618A /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633FD29783EF60054618A /* Views.swift */; };
+		61C6340529783EF70054618A /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C633FE29783EF70054618A /* Buttons.swift */; };
+		61C6340C297840C60054618A /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C63407297840C20054618A /* SectionView.swift */; };
+		61C6340D297840C60054618A /* CardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C63408297840C30054618A /* CardDetailsView.swift */; };
+		61C6340E297840C60054618A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C63409297840C40054618A /* CardView.swift */; };
+		61C6340F297840C60054618A /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6340A297840C50054618A /* SelectionView.swift */; };
+		61C63410297840C60054618A /* ParkingSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6340B297840C60054618A /* ParkingSlotView.swift */; };
+		61C63414297841220054618A /* EditOccupantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C63411297841200054618A /* EditOccupantView.swift */; };
+		61C63415297841220054618A /* AddOccupantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C63412297841210054618A /* AddOccupantView.swift */; };
+		61C63416297841220054618A /* OccupantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C63413297841220054618A /* OccupantsView.swift */; };
+		61C634182978415B0054618A /* AdaptiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C634172978415B0054618A /* AdaptiveView.swift */; };
+		61C6341A297841660054618A /* NameInitials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C63419297841660054618A /* NameInitials.swift */; };
+		61C6341C297841E60054618A /* TextFieldChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6341B297841E60054618A /* TextFieldChecker.swift */; };
+		61C6341E297842140054618A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C6341D297842140054618A /* ProfileView.swift */; };
+		61C63422297849750054618A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61C63421297849750054618A /* GoogleService-Info.plist */; };
+		61F426E329783A6800DB18AC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F426E229783A6800DB18AC /* HomeView.swift */; };
+		61F426E529783AEC00DB18AC /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F426E429783AEC00DB18AC /* SplashScreen.swift */; };
+		61F426E729783B1C00DB18AC /* ExtentionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F426E629783B1C00DB18AC /* ExtentionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6189DDBF2978352E00D61ECF /* DTN Manila Parking Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DTN Manila Parking Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E63A6B5B9AD965F6C9411A /* Pods-DTN Manila Parking Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTN Manila Parking Manager.release.xcconfig"; path = "Target Support Files/Pods-DTN Manila Parking Manager/Pods-DTN Manila Parking Manager.release.xcconfig"; sourceTree = "<group>"; };
+		6189DDBF2978352E00D61ECF /* Parking Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parking Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6189DDC22978352E00D61ECF /* DTN_Manila_Parking_ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTN_Manila_Parking_ManagerApp.swift; sourceTree = "<group>"; };
 		6189DDC42978352E00D61ECF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		6189DDC62978352F00D61ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6189DDC92978352F00D61ECF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6189DDD3297836CE00D61ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		61C633CE29783D4B0054618A /* ParkingSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpace.swift; sourceTree = "<group>"; };
+		61C633CF29783D4C0054618A /* Slot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
+		61C633D229783D540054618A /* Occupant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupant.swift; sourceTree = "<group>"; };
+		61C633D429783DB60054618A /* NavigationStateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationStateManager.swift; sourceTree = "<group>"; };
+		61C633D529783DB70054618A /* OccupantsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupantsViewModel.swift; sourceTree = "<group>"; };
+		61C633D629783DB80054618A /* ParkingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingViewModel.swift; sourceTree = "<group>"; };
+		61C633D729783DB80054618A /* FormValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
+		61C633D829783DB90054618A /* DataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
+		61C633E129783E420054618A /* TimeKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeKeeper.swift; sourceTree = "<group>"; };
+		61C633E229783E420054618A /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		61C633E329783E430054618A /* FirestoreDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreDatabase.swift; sourceTree = "<group>"; };
+		61C633E429783E440054618A /* ColorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHandler.swift; sourceTree = "<group>"; };
+		61C633E529783E450054618A /* NavigationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		61C633F229783EE30054618A /* ParkingSpaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSpaces.swift; sourceTree = "<group>"; };
+		61C633F329783EE40054618A /* Occupants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupants.swift; sourceTree = "<group>"; };
+		61C633F429783EE40054618A /* Slots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slots.swift; sourceTree = "<group>"; };
+		61C633F829783EF20054618A /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		61C633F929783EF30054618A /* Conditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conditions.swift; sourceTree = "<group>"; };
+		61C633FA29783EF40054618A /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		61C633FB29783EF50054618A /* Labels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
+		61C633FC29783EF50054618A /* Links.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		61C633FD29783EF60054618A /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		61C633FE29783EF70054618A /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		61C634062978403E0054618A /* DTN-Manila-Parking-Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DTN-Manila-Parking-Manager-Info.plist"; sourceTree = SOURCE_ROOT; };
+		61C63407297840C20054618A /* SectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		61C63408297840C30054618A /* CardDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsView.swift; sourceTree = "<group>"; };
+		61C63409297840C40054618A /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		61C6340A297840C50054618A /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		61C6340B297840C60054618A /* ParkingSlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingSlotView.swift; sourceTree = "<group>"; };
+		61C63411297841200054618A /* EditOccupantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOccupantView.swift; sourceTree = "<group>"; };
+		61C63412297841210054618A /* AddOccupantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOccupantView.swift; sourceTree = "<group>"; };
+		61C63413297841220054618A /* OccupantsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccupantsView.swift; sourceTree = "<group>"; };
+		61C634172978415B0054618A /* AdaptiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveView.swift; sourceTree = "<group>"; };
+		61C63419297841660054618A /* NameInitials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameInitials.swift; sourceTree = "<group>"; };
+		61C6341B297841E60054618A /* TextFieldChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldChecker.swift; sourceTree = "<group>"; };
+		61C6341D297842140054618A /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		61C63421297849750054618A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Apple Deployment/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		61F426E229783A6800DB18AC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		61F426E429783AEC00DB18AC /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		61F426E629783B1C00DB18AC /* ExtentionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionView.swift; sourceTree = "<group>"; };
+		816D766B6BF2E3C464EA4432 /* Pods_DTN_Manila_Parking_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DTN_Manila_Parking_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0169778B7979C03E64CD7AA /* Pods-DTN Manila Parking Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTN Manila Parking Manager.debug.xcconfig"; path = "Target Support Files/Pods-DTN Manila Parking Manager/Pods-DTN Manila Parking Manager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,24 +109,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F013B7B182FB259D2061D9A /* Pods_DTN_Manila_Parking_Manager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49ADB6914BF6B9FCCF512BCE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0169778B7979C03E64CD7AA /* Pods-DTN Manila Parking Manager.debug.xcconfig */,
+				25E63A6B5B9AD965F6C9411A /* Pods-DTN Manila Parking Manager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6189DDB62978352E00D61ECF = {
 			isa = PBXGroup;
 			children = (
 				6189DDC12978352E00D61ECF /* DTN Manila Parking Manager */,
 				6189DDC02978352E00D61ECF /* Products */,
+				49ADB6914BF6B9FCCF512BCE /* Pods */,
+				72760D6AA69F0D8FD09CD025 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		6189DDC02978352E00D61ECF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6189DDBF2978352E00D61ECF /* DTN Manila Parking Manager.app */,
+				6189DDBF2978352E00D61ECF /* Parking Manager.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,9 +146,15 @@
 		6189DDC12978352E00D61ECF /* DTN Manila Parking Manager */ = {
 			isa = PBXGroup;
 			children = (
+				61C634062978403E0054618A /* DTN-Manila-Parking-Manager-Info.plist */,
+				61C63421297849750054618A /* GoogleService-Info.plist */,
 				6189DDC22978352E00D61ECF /* DTN_Manila_Parking_ManagerApp.swift */,
-				6189DDC42978352E00D61ECF /* ContentView.swift */,
-				6189DDC62978352F00D61ECF /* Assets.xcassets */,
+				61C633CA29783BD80054618A /* Model */,
+				6189DDD02978353900D61ECF /* View */,
+				61C633CB29783BF40054618A /* View Model */,
+				61C633DF29783E130054618A /* Services */,
+				61C633DE29783DF70054618A /* Helpers */,
+				6189DDD3297836CE00D61ECF /* Assets.xcassets */,
 				6189DDC82978352F00D61ECF /* Preview Content */,
 			);
 			path = "DTN Manila Parking Manager";
@@ -67,6 +168,128 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		6189DDD02978353900D61ECF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6189DDC42978352E00D61ECF /* ContentView.swift */,
+				61F426E129783A5500DB18AC /* Home */,
+				61C633CD29783CAF0054618A /* ParkingSpace */,
+				61C633CC29783CA60054618A /* Occupant */,
+				61C6341D297842140054618A /* ProfileView.swift */,
+				61F426E429783AEC00DB18AC /* SplashScreen.swift */,
+				61C63419297841660054618A /* NameInitials.swift */,
+				61C634172978415B0054618A /* AdaptiveView.swift */,
+				61F426E629783B1C00DB18AC /* ExtentionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61C633CA29783BD80054618A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				61C633CE29783D4B0054618A /* ParkingSpace.swift */,
+				61C633CF29783D4C0054618A /* Slot.swift */,
+				61C633D229783D540054618A /* Occupant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		61C633CB29783BF40054618A /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				61C633D829783DB90054618A /* DataViewModel.swift */,
+				61C633D729783DB80054618A /* FormValidation.swift */,
+				61C633D429783DB60054618A /* NavigationStateManager.swift */,
+				61C633D529783DB70054618A /* OccupantsViewModel.swift */,
+				61C633D629783DB80054618A /* ParkingViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		61C633CC29783CA60054618A /* Occupant */ = {
+			isa = PBXGroup;
+			children = (
+				61C63412297841210054618A /* AddOccupantView.swift */,
+				61C63411297841200054618A /* EditOccupantView.swift */,
+				61C63413297841220054618A /* OccupantsView.swift */,
+				61C6341B297841E60054618A /* TextFieldChecker.swift */,
+			);
+			path = Occupant;
+			sourceTree = "<group>";
+		};
+		61C633CD29783CAF0054618A /* ParkingSpace */ = {
+			isa = PBXGroup;
+			children = (
+				61C6340B297840C60054618A /* ParkingSlotView.swift */,
+				61C63407297840C20054618A /* SectionView.swift */,
+				61C63409297840C40054618A /* CardView.swift */,
+				61C63408297840C30054618A /* CardDetailsView.swift */,
+				61C6340A297840C50054618A /* SelectionView.swift */,
+			);
+			path = ParkingSpace;
+			sourceTree = "<group>";
+		};
+		61C633DE29783DF70054618A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				61C633F029783E8A0054618A /* AppConstants */,
+				61C633F129783EC50054618A /* FirebaseConstants */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		61C633DF29783E130054618A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				61C633E429783E440054618A /* ColorHandler.swift */,
+				61C633E229783E420054618A /* DataHandler.swift */,
+				61C633E329783E430054618A /* FirestoreDatabase.swift */,
+				61C633E529783E450054618A /* NavigationState.swift */,
+				61C633E129783E420054618A /* TimeKeeper.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		61C633F029783E8A0054618A /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				61C633FE29783EF70054618A /* Buttons.swift */,
+				61C633F929783EF30054618A /* Conditions.swift */,
+				61C633F829783EF20054618A /* General.swift */,
+				61C633FA29783EF40054618A /* Icons.swift */,
+				61C633FB29783EF50054618A /* Labels.swift */,
+				61C633FC29783EF50054618A /* Links.swift */,
+				61C633FD29783EF60054618A /* Views.swift */,
+			);
+			path = AppConstants;
+			sourceTree = "<group>";
+		};
+		61C633F129783EC50054618A /* FirebaseConstants */ = {
+			isa = PBXGroup;
+			children = (
+				61C633F329783EE40054618A /* Occupants.swift */,
+				61C633F229783EE30054618A /* ParkingSpaces.swift */,
+				61C633F429783EE40054618A /* Slots.swift */,
+			);
+			path = FirebaseConstants;
+			sourceTree = "<group>";
+		};
+		61F426E129783A5500DB18AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				61F426E229783A6800DB18AC /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		72760D6AA69F0D8FD09CD025 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				816D766B6BF2E3C464EA4432 /* Pods_DTN_Manila_Parking_Manager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +297,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6189DDCD2978352F00D61ECF /* Build configuration list for PBXNativeTarget "DTN Manila Parking Manager" */;
 			buildPhases = (
+				E79C1EE4D7B0FBBEF7DEDF17 /* [CP] Check Pods Manifest.lock */,
 				6189DDBB2978352E00D61ECF /* Sources */,
 				6189DDBC2978352E00D61ECF /* Frameworks */,
 				6189DDBD2978352E00D61ECF /* Resources */,
+				77D4E4BF9E18722D2B4105C7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -84,7 +309,7 @@
 			);
 			name = "DTN Manila Parking Manager";
 			productName = "DTN Manila Parking Manager";
-			productReference = 6189DDBF2978352E00D61ECF /* DTN Manila Parking Manager.app */;
+			productReference = 6189DDBF2978352E00D61ECF /* Parking Manager.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,19 +351,100 @@
 			buildActionMask = 2147483647;
 			files = (
 				6189DDCA2978352F00D61ECF /* Preview Assets.xcassets in Resources */,
-				6189DDC72978352F00D61ECF /* Assets.xcassets in Resources */,
+				61C63422297849750054618A /* GoogleService-Info.plist in Resources */,
+				6189DDD4297836CE00D61ECF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77D4E4BF9E18722D2B4105C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DTN Manila Parking Manager/Pods-DTN Manila Parking Manager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DTN Manila Parking Manager/Pods-DTN Manila Parking Manager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DTN Manila Parking Manager/Pods-DTN Manila Parking Manager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E79C1EE4D7B0FBBEF7DEDF17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DTN Manila Parking Manager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6189DDBB2978352E00D61ECF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C6340C297840C60054618A /* SectionView.swift in Sources */,
+				61F426E529783AEC00DB18AC /* SplashScreen.swift in Sources */,
+				61C633EB29783E450054618A /* NavigationState.swift in Sources */,
+				61C6340129783EF70054618A /* Icons.swift in Sources */,
+				61C633D029783D4C0054618A /* ParkingSpace.swift in Sources */,
+				61C6341A297841660054618A /* NameInitials.swift in Sources */,
+				61C633F529783EE40054618A /* ParkingSpaces.swift in Sources */,
+				61C6340329783EF70054618A /* Links.swift in Sources */,
+				61C6340D297840C60054618A /* CardDetailsView.swift in Sources */,
+				61C633D929783DB90054618A /* NavigationStateManager.swift in Sources */,
+				61C63414297841220054618A /* EditOccupantView.swift in Sources */,
+				61C6340E297840C60054618A /* CardView.swift in Sources */,
+				61C6340529783EF70054618A /* Buttons.swift in Sources */,
+				61F426E329783A6800DB18AC /* HomeView.swift in Sources */,
+				61C6340429783EF70054618A /* Views.swift in Sources */,
+				61C633E929783E450054618A /* FirestoreDatabase.swift in Sources */,
+				61C633E829783E450054618A /* DataHandler.swift in Sources */,
+				61C6340F297840C60054618A /* SelectionView.swift in Sources */,
+				61C633DB29783DB90054618A /* ParkingViewModel.swift in Sources */,
+				61C633D129783D4C0054618A /* Slot.swift in Sources */,
+				61C634182978415B0054618A /* AdaptiveView.swift in Sources */,
+				61C633DC29783DB90054618A /* FormValidation.swift in Sources */,
+				61C63410297840C60054618A /* ParkingSlotView.swift in Sources */,
+				61C633EA29783E450054618A /* ColorHandler.swift in Sources */,
+				61C633FF29783EF70054618A /* General.swift in Sources */,
+				61C633F729783EE40054618A /* Slots.swift in Sources */,
+				61C6340029783EF70054618A /* Conditions.swift in Sources */,
 				6189DDC52978352E00D61ECF /* ContentView.swift in Sources */,
+				61F426E729783B1C00DB18AC /* ExtentionView.swift in Sources */,
+				61C633F629783EE40054618A /* Occupants.swift in Sources */,
+				61C633DA29783DB90054618A /* OccupantsViewModel.swift in Sources */,
+				61C633D329783D540054618A /* Occupant.swift in Sources */,
+				61C6341E297842140054618A /* ProfileView.swift in Sources */,
+				61C6340229783EF70054618A /* Labels.swift in Sources */,
+				61C63415297841220054618A /* AddOccupantView.swift in Sources */,
 				6189DDC32978352E00D61ECF /* DTN_Manila_Parking_ManagerApp.swift in Sources */,
+				61C63416297841220054618A /* OccupantsView.swift in Sources */,
+				61C633DD29783DB90054618A /* DataViewModel.swift in Sources */,
+				61C633E729783E450054618A /* TimeKeeper.swift in Sources */,
+				61C6341C297841E60054618A /* TextFieldChecker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,27 +567,29 @@
 		};
 		6189DDCE2978352F00D61ECF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0169778B7979C03E64CD7AA /* Pods-DTN Manila Parking Manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"DTN Manila Parking Manager/Preview Content\"";
 				DEVELOPMENT_TEAM = A3K8CWTXMB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "DTN-Manila-Parking-Manager-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DTN-Manila-Parking-Manager.DTN-Manila-Parking-Manager";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dtn-MNL-parking-manager";
+				PRODUCT_NAME = "Parking Manager";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -290,27 +598,29 @@
 		};
 		6189DDCF2978352F00D61ECF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E63A6B5B9AD965F6C9411A /* Pods-DTN Manila Parking Manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"DTN Manila Parking Manager/Preview Content\"";
 				DEVELOPMENT_TEAM = A3K8CWTXMB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "DTN-Manila-Parking-Manager-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DTN-Manila-Parking-Manager.DTN-Manila-Parking-Manager";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dtn-MNL-parking-manager";
+				PRODUCT_NAME = "Parking Manager";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
