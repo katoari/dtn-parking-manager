@@ -9,9 +9,9 @@ import Foundation
 
 
 struct Occupant: Identifiable, Equatable,  Hashable, Codable{
-    var id : String {name}
+    var id : String
     var name: String
-    var contactNo : String
+    var phone : String
     var plateNo : String
     var vehicle : String = "Car"
     
@@ -19,10 +19,13 @@ struct Occupant: Identifiable, Equatable,  Hashable, Codable{
         return(
         lhs.id == rhs.id &&
         lhs.name == rhs.name &&
-        lhs.contactNo == rhs.contactNo &&
-        lhs.plateNo == lhs.plateNo &&
-        lhs.vehicle == lhs.vehicle)
+        lhs.phone == rhs.phone &&
+        lhs.plateNo == rhs.phone &&
+        lhs.vehicle == rhs.vehicle)
     }
+    
+    
+    static var defaultOccupant = Occupant(id: "", name: "", phone: "", plateNo: "")
     
 
 }

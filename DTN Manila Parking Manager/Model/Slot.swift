@@ -28,4 +28,6 @@ struct Slot : Identifiable, Equatable,Codable, Hashable {
         lhs.type == rhs.type &&
         lhs.parkingSpaceID == rhs.parkingSpaceID)
     }
+    
+    static var defaultSlot = Slot(id: "", occupant: "", date: "", time: "", type: "", parkingSpaceID: "")
 }

@@ -22,12 +22,6 @@ struct CardDetailsView: View {
                     .foregroundColor(dataModel.isParkingAvailable(slot.occupant) ? Color.available_color : Color.empty_color)
                 VStack (alignment: .center){
                     isAvailableButton(status: slot.occupant)
-                    Text(slot.occupant)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .fixedSize(horizontal: false, vertical: true)
                     occupantDetails()
                 }
             }
@@ -38,15 +32,9 @@ struct CardDetailsView: View {
 
 
 struct CardDetailsView_Previews: PreviewProvider {
+    static let dataService = FirestoreService()
     static var previews: some View {
-        CardDetailsView(slot: Slot(
-            id: "",
-            occupant: "",
-            date: "",
-            time: "",
-            type: "",
-            parkingSpaceID: ""
-        ))
-            .environmentObject(DataViewModel())
+        CardDetailsView(slot: Slot.defaultSlot)
+            .environmentObject(DataViewModel(dataService: dataService))
     }
 }

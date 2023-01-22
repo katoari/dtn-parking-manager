@@ -8,6 +8,11 @@
 import Foundation
 
 
+enum NavigationState: Hashable, Codable {
+    case profileOccupant(Occupant)
+    case editOccupant(Occupant)
+}
+
 class NaviagationStateManager: ObservableObject {
     
     @Published var selectionState : NavigationState? = nil

@@ -28,11 +28,11 @@ struct CardView: View {
                             Text("\(General.slot) \(slot.id)")
                                 .frame(maxWidth: .infinity, maxHeight:30, alignment: .center)
                                 .foregroundColor(.white)
-                                .fontWeight(.bold)
+                                .font(Font.body.bold())
                                 .background(.gray)
                                 .border(.black.opacity(0.7))
                             CardDetailsView(slot: slot)
-
+                            
                         }
                     }.onAppear(){
                         self.tempParking = slot.parkingSpaceID
@@ -41,7 +41,7 @@ struct CardView: View {
                 .onChange(of: dataModel.parkingFloors) { floor in
                     // slots, temparking, newValue
                     if let index = floor.firstIndex(where: {$0.title == self.tempParking}) {
-                        slots = floor[index].slots!
+                        slots = floor[index].slots
                     }
                 }
             }
@@ -50,17 +50,11 @@ struct CardView: View {
     
     
     struct CardView_Previews: PreviewProvider {
+        static let dataService = FirestoreService()
         static var previews: some View {
             CardView(slots: [
-                Slot(
-                    id: "",
-                    occupant: "",
-                    date: "",
-                    time: "",
-                    type: "",
-                    parkingSpaceID: ""
-                )])
-                .environmentObject(DataViewModel())
+                Slot.defaultSlot])
+            .environmentObject(DataViewModel(dataService: dataService))
         }
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 struct ParkingSpace : Identifiable, Equatable, Hashable, Codable {
     var id : String {title}
     var title : String
-    var slots : [Slot]? = []
+    var slots : [Slot]
     
     static func == (lhs: ParkingSpace, rhs: ParkingSpace) -> Bool {
         return(

@@ -10,6 +10,7 @@ import FirebaseCore
 
 @main
 struct DTN_Manila_Parking_ManagerApp: App {
+    
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
       
     var body: some Scene {

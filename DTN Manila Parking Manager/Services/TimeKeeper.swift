@@ -18,6 +18,8 @@ class TimeKeeper: ObservableObject {
         let instance = TimeKeeper()
         return instance
     }()
+    private init() {
+    }
     
     func createCurrentDateTime() -> String {
         currentTime = Date()
@@ -58,8 +60,7 @@ class TimeKeeper: ObservableObject {
     }
     
     
-    private init() {
-    }
+
     
 
     

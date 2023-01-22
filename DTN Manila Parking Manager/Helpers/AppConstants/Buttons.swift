@@ -16,6 +16,7 @@ struct Buttons{
     static let dialog2 = "Are you sure you want to discard this new employee?"
     static let yes = "Yes"
     static let no = "No"
+    static let ok = "Ok"
     static let cancel = "Cancel"
     static let done = "Done"
     static let discard = "Discard Changes"

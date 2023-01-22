@@ -22,10 +22,10 @@ struct SelectionView: View {
                 .searchable(text: $dataModel.searchedOccupant, placement: .navigationBarDrawer(displayMode: .always))
                 .onChange(of: selection) { selected in
                     if let selected = selected {
-                        //print(selected)
-                        let getDate = dataModel.timeKeeper.createCurrentDateTime()
-                        dataModel.updateSlotOccupant(floor: slot.parkingSpaceID, slotNumber: slot.id, newValue: selected)
-                        dataModel.updateSlotDate(floor: slot.parkingSpaceID, slotNumber: slot.id, newValue: getDate)
+                        print(selected)
+                        let getDate = TimeKeeper.shared.createCurrentDateTime()
+                        dataModel.updateSlotOccupant(from: slot, newValue: selected)
+                        dataModel.updateSlotDate(from: slot,  newValue: getDate)
                         selectionListAppear = false
 
                         
@@ -35,12 +35,12 @@ struct SelectionView: View {
             }
             .toolbar {
                 ToolbarItem (placement: .cancellationAction){
-                    Button("Cancel") {
+                    Button(Buttons.cancel) {
                         selectionListAppear = false
                     }
                 }
                 ToolbarItem (placement: .principal){
-                    Text("Select an Employee")
+                    Text(Labels.defaultTitle)
                         .font(.headline)
                         .bold()
                 }
@@ -50,17 +50,11 @@ struct SelectionView: View {
     }
 }
 struct SheetView_Previews: PreviewProvider {
+    static let dataService = FirestoreService()
     static var previews: some View {
         SelectionView(
             selectionListAppear: .constant(true),
-            slot: Slot(
-                id: "",
-                occupant: "",
-                date: "",
-                time: "",
-                type: "",
-                parkingSpaceID: ""
-            ))
-        .environmentObject(DataViewModel())
+            slot: Slot.defaultSlot)
+        .environmentObject(DataViewModel(dataService: dataService))
     }
 }

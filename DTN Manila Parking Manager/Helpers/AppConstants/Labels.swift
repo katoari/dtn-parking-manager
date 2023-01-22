@@ -24,5 +24,8 @@ struct Labels {
     
     static let date = "Date"
     static let time = "Time in"
+    
+    static let alertTitle = "Opps!"
+    static let alertMessage = "Please free up the slot this user has occupied first"
 
 }

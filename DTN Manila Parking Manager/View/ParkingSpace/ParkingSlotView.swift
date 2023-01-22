@@ -21,10 +21,11 @@ struct ParkingSlotView: View {
 
 
 struct ParkingSlotView_Previews: PreviewProvider {
+    static let dataService = FirestoreService()
     static var previews: some View {
         Group {
             ParkingSlotView()
-                .environmentObject(DataViewModel())
+                .environmentObject(DataViewModel(dataService: dataService))
                 .previewLayout(.sizeThatFits)
         }
     }

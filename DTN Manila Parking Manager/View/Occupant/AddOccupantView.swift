@@ -13,6 +13,7 @@ struct AddOccupantView: View {
     @EnvironmentObject var validation : FormValidation
     @Binding var showSheet : Bool
     @State var showDialog : Bool = false
+    @State var showErrors : Bool = false
     @FocusState var keyboardFocused: Bool
     
     var body: some View {
@@ -32,7 +33,7 @@ struct AddOccupantView: View {
                 .toolbar {
                     ToolbarItem (placement: .cancellationAction){
                         Button(Buttons.cancel) {
-                            if validation.isNotEmpty() {
+                            if validation.isNotDiscard() {
                                 showDialog = true
                             } else {
                                 showSheet = false
@@ -46,30 +47,32 @@ struct AddOccupantView: View {
                     }
                     ToolbarItem (placement: .confirmationAction){
                         Button {
-                            let newOccupant = Occupant(
-                                name: validation.occupant.name,
-                                contactNo: validation.occupant.contactNo,
-                                plateNo: validation.occupant.plateNo,
-                                vehicle: validation.occupant.vehicle)
-                            
-                            dataModel.addOccupant(occupant: newOccupant)
-                            showSheet = false
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                navigationManager.goToProfile(to: newOccupant)
+                            if !validation.validationComplete() {
+                                let newOccupant = Occupant(
+                                    id: validation.occupant.id,
+                                    name: validation.occupant.name,
+                                    phone:
+                                        validation.occupant.phone,
+                                    plateNo: validation.occupant.plateNo,
+                                    vehicle: validation.occupant.vehicle)
+                                
+                                dataModel.addOccupant(occupant: newOccupant)
+                                showSheet = false
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                    navigationManager.goToProfile(to: newOccupant)
+                                }
+                            } else {
+                                showErrors = true 
                             }
                             
                         } label: {
                             Text(Buttons.done)
                         }
-                        .disabled(validation.isAddOccupantComplete())
                     }
                 }
             }
             .onAppear(){
-                validation.occupant = Occupant(name: "", contactNo: "", plateNo: "")
-            }
-            .onChange(of: validation.occupant) { newValue in
-                print(validation.isNotEmpty())
+                validation.occupant = Occupant.defaultOccupant
             }
             .confirmationDialog(Buttons.dialog2,
                                 isPresented: $showDialog,
@@ -91,9 +94,10 @@ struct AddOccupantView: View {
 }
 
 struct AddOccupantView_Previews: PreviewProvider {
+    static let dataService = FirestoreService()
     static var previews: some View {
         AddOccupantView(showSheet: .constant(true))
-            .environmentObject(DataViewModel())
+            .environmentObject(DataViewModel(dataService: dataService))
             .environmentObject(NaviagationStateManager())
             .environmentObject(FormValidation())
     }

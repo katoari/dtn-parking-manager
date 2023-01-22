@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    static let dataService = FirestoreService()
     init(){
         UITextField.appearance().clearButtonMode = .whileEditing
     }
     
     var body: some View{
         SplashScreen (load: State(wrappedValue: true)){
-            HomeView()
+            HomeView(dataService: FirestoreService())
         }
-
     }
 }
 
