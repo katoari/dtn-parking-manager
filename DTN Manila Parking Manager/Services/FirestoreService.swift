@@ -22,12 +22,12 @@ class FirestoreService : DataSubscription {
     private var occupantRef : CollectionReference {
         db.collection(Occupants.collectionName)
     }
-    
-    
+    var parkingSpace : [ParkingSpace] = []
+    var occupants : [Occupant] = []
     
     
     func fetchOccupants(completion : @escaping ([Occupant]?) -> Void){
-        var occupants : [Occupant] = []
+
         _ = occupantRef.addSnapshotListener { query, error in
             guard error == nil else{
                 completion(nil)
@@ -35,7 +35,7 @@ class FirestoreService : DataSubscription {
             }
             
             if let snapshot = query {
-                occupants = snapshot.documents.map { document in
+                self.occupants = snapshot.documents.map { document in
 
                     let occupant = Occupant(
                         id: document.documentID,
@@ -46,7 +46,7 @@ class FirestoreService : DataSubscription {
                     return occupant
                 }
                 
-                completion(occupants)
+                completion(self.occupants)
             }
         }
     }
@@ -66,7 +66,6 @@ class FirestoreService : DataSubscription {
     }
     func fetchParkingSpace(completion : @escaping ([ParkingSpace]?) -> Void){
         var slots : [Slot] = []
-        var parkingSpace : [ParkingSpace] = []
         fetchFloors { floors in
             guard let floors = floors else {
                 return
@@ -100,14 +99,14 @@ class FirestoreService : DataSubscription {
                     }
                     let parkingFloor = ParkingSpace(title: floor, slots: slots)
 
-                    if let index = parkingSpace.firstIndex(where: {$0.title == floor}){
-                        parkingSpace[index].slots = slots
+                    if let index = self.parkingSpace.firstIndex(where: {$0.title == floor}){
+                        self.parkingSpace[index].slots = slots
                     } else{
-                        parkingSpace.append(parkingFloor)
+                        self.parkingSpace.append(parkingFloor)
                     }
                     
                     
-                    completion(parkingSpace)
+                    completion(self.parkingSpace)
                 }
 
             }
@@ -152,7 +151,7 @@ class FirestoreService : DataSubscription {
             }
         }
     }
-    func updateSlotOccupant(from slot : Slot, newValue : String){
+    func freeUpOrOccupy(from slot : Slot, newValue : String){
         let slotRef = self.parkingRef.document(slot.parkingSpaceID).collection(Slots.collectionName).document(slot.id)
         let new = newValue == Conditions.available ? String() : newValue
         slotRef.updateData([

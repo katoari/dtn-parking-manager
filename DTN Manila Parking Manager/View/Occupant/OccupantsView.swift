@@ -26,20 +26,23 @@ struct OccupantsView: View {
                             NavigationLink(occupant.name, value: NavigationState.profileOccupant(occupant))
                         }
                         .onDelete { index in
+                            let occupants = dataModel.occupants
                             index.sorted(by: > ).forEach { i in
-                                toDelete = dataModel.occupants.remove(at: i)
+                                let slot = dataModel.getSlot(by: occupants[i])
+                                if slot != nil {
+                                    showAlert = true
+
+                                } else {
+                                    toDelete = dataModel.occupants.remove(at: i)
+                                    showDialog = true
+                                }
+                                
+
                             }
-                            let slot = dataModel.getSlot(by: toDelete)
-                            if slot != nil {
-                                showAlert = true
-                            } else {
-                                showDialog = true
-                            }
+
+
                         }
                     }
-                }
-                .onAppear(){
-                    validation.occupants = dataModel.occupants
                 }
                 .alert(isPresented: $showAlert, content: {
                     Alert(
@@ -82,6 +85,7 @@ struct OccupantsView: View {
                     case .editOccupant(let occupant):
                         EditOccupantView()
                             .onAppear(){
+                                print(occupant)
                                 DispatchQueue.main.async {
                                     validation.occupant = occupant
                                 }

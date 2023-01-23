@@ -12,9 +12,9 @@ import Foundation
 struct Slot : Identifiable, Equatable,Codable, Hashable {
     
     let id: String
-    let occupant: String
-    let date: String
-    let time: String
+    var occupant: String
+    var date: String
+    var time: String
     let type: String
     let parkingSpaceID : String
     

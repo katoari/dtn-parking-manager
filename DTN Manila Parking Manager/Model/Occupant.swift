@@ -20,7 +20,7 @@ struct Occupant: Identifiable, Equatable,  Hashable, Codable{
         lhs.id == rhs.id &&
         lhs.name == rhs.name &&
         lhs.phone == rhs.phone &&
-        lhs.plateNo == rhs.phone &&
+        lhs.plateNo == rhs.plateNo &&
         lhs.vehicle == rhs.vehicle)
     }
     

@@ -24,7 +24,7 @@ struct SelectionView: View {
                     if let selected = selected {
                         print(selected)
                         let getDate = TimeKeeper.shared.createCurrentDateTime()
-                        dataModel.updateSlotOccupant(from: slot, newValue: selected)
+                        dataModel.freeUpOrOccupy(from: slot, newValue: selected)
                         dataModel.updateSlotDate(from: slot,  newValue: getDate)
                         selectionListAppear = false
 

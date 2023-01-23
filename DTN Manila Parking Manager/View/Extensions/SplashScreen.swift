@@ -13,7 +13,6 @@ struct SplashScreen<Content: View>: View {
     @State var size = 0.8
     @State var opacity = 0.5
     
-    
     public init(load : State<Bool>, @ViewBuilder content: () -> Content) {
         self._load = load
         self.content = content()

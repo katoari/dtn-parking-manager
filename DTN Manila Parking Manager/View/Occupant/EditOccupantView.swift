@@ -25,7 +25,8 @@ struct EditOccupantView: View {
                 .toolbar {
                     ToolbarItem {
                         Button {
-                            if !validation.validationComplete() {
+                            validation.occupants = dataModel.occupants
+                            if validation.complete() {
                                 dataModel.updateOccupant(validation.occupant)
                                 navigationManager.goToProfile(to: validation.occupant)
                             } else {

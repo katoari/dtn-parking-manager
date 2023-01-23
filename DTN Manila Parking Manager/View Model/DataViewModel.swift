@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class DataViewModel : ObservableObject {
     @Published var parkingFloors: [ParkingSpace] = []
     @Published var occupants: [Occupant] = []
@@ -19,9 +18,6 @@ class DataViewModel : ObservableObject {
         populateParkingSpace()
         populateOccupants()
     }
-    
-    
-    
     
     
     func populateParkingSpace(){
@@ -36,8 +32,8 @@ class DataViewModel : ObservableObject {
             })
         }
     }
-    func updateSlotOccupant(from slot : Slot, newValue : String){
-        dataService.updateSlotOccupant(from: slot, newValue: newValue)
+    func freeUpOrOccupy(from slot : Slot, newValue : String){
+        dataService.freeUpOrOccupy(from: slot, newValue: newValue)
         
     }
     func updateSlotDate(from slot: Slot, newValue : String){
@@ -49,6 +45,10 @@ class DataViewModel : ObservableObject {
                 return
             }
             self.occupants = occupants
+            self.occupants = self.occupants.sorted(by: { fist, last in
+                fist.name < last.name
+            })
+            
         }
         
     }

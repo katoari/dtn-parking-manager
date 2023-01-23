@@ -8,9 +8,10 @@
 import Foundation
 
 
-enum ValidationErrorType {
-    case addError
-    case editError
+
+enum ValidationType {
+    case add
+    case edit
 }
 
 
@@ -19,63 +20,52 @@ class FormValidation : ObservableObject {
     @Published var occupants : [Occupant] = []
     let vehicles = ["Car", "Scooter", "Motorcycle", "Bicycle"]
     
-    func isNotValidName() -> Bool {
-        let name = occupant.name.removeSpace
-        let result = name.count < 2 ? true : false
-        //message = "Invalid Name"
+    func isValidName() -> Bool {
+        let name = occupant.name
+        let result = name.count > 2 ? true : false
         return result
     }
-    func isNotValidContactNo() -> Bool {
-        let ContactNumber = occupant.phone.removeSpace
-        let result = ContactNumber.count != 11 || ContactNumber.isEmpty ? true : false
-        //message = "Invalid Contact Number"
+    func isValidContactNo() -> Bool {
+        let phone = occupant.phone
+        let result = phone.count == 11 ? true : false
         return result
     }
-    func isNotValidPlateNo() -> Bool {
-        let PlateNumber = occupant.plateNo.removeSpace
-        let result = PlateNumber.isEmpty || isPlateNoExist() ? true : false
-        //message = "Plate Number is required"
+    func isValidPlateNo() -> Bool {
+        let plateNo = occupant.plateNo
+        let result = !plateNo.isEmpty ? true : false
         return result
     }
-    func isNotValidVehicle() -> Bool {
-        let vehicle = occupant.vehicle.removeSpace
-        let result = vehicle != Conditions.bike ? true : false
+    func isNotBike() -> Bool {
+        let vehicle = occupant.vehicle.lowercased()
+        let result = vehicle != Conditions.bike.lowercased() ? true : false
         return result
     }
-    func validationComplete() -> Bool {
-        let result = isNotValidName() || isOccupantExist() ||
-        isNotValidContactNo() || isNotValidVehicle() && isNotValidPlateNo()
+    func complete() -> Bool {
+        let bikeCondition = isValidName() && isValidContactNo() && !occupantExist()
+        let notBikeCondition = bikeCondition && !plateNoExist() && isValidPlateNo()
+        let bikeOrNot = isNotBike() ? notBikeCondition : bikeCondition
+        let result = bikeOrNot
         ? true : false
         return result
     }
     func isNotDiscard() -> Bool{
-        let name = occupant.name.removeSpace
-        let phone = occupant.phone.removeSpace
-        let vehicle = occupant.vehicle.removeSpace
-        let PlateNumber = occupant.plateNo.removeSpace
-        let result = !name.isEmpty || !phone.isEmpty || vehicle != Conditions.car && PlateNumber.isEmpty ? true : false
+        let result = !occupant.name.isEmpty || isValidContactNo() ||  (!isNotBike() && !isValidPlateNo()) ? true : false
         return result
     }
-    func isOccupantExist() -> Bool {
-        print(occupant.id)
+    func occupantExist() -> Bool {
         let result = occupants.map({$0.name}).contains(occupant.name) ? true : false
         return result
     }
-    func isPlateNoExist() -> Bool {
+    func plateNoExist() -> Bool {
         let plateNo = occupants.map({$0.plateNo})
-        if !occupant.plateNo.isEmpty {
-            let result = plateNo.contains(occupant.plateNo) ? true : false
-            return result
-        } else {
-            return false
-        }
+        
+        let result = plateNo.contains(occupant.plateNo) ? true : false
+        return result
+
     }
     func showOrHideErrors(by error : Bool, type errorType : String) -> String {
-        if error {
-            return errorType
-        } else {
-            return ""
-        }
+        let result = error ? errorType : ""
+        return result
     }
     
     
@@ -83,31 +73,29 @@ class FormValidation : ObservableObject {
         if occupant.name.isEmpty {
             return "Name is required"
         }
-        else if isOccupantExist(){
-            return "Name must be unique"
+        else if occupantExist(){
+            return "Name already taken"
         }
-        else if isNotValidName() {
+        else if !isValidName() {
             return "Invalid Name"
         }
         else if occupant.phone.isEmpty{
             return "Phone Number is required"
         }
-        else if isNotValidContactNo() {
+        else if !isValidContactNo() {
             return "Invalid Phone Number"
         } else {
-            return ""
+            return String()
         }
     }
+    
     var sectionError2 : String {
-        if occupant.plateNo.isEmpty && isNotValidVehicle(){
+        if isNotBike() && (!isValidPlateNo()){
             return "Plate Number is required"
-        } else if isPlateNoExist() && isNotValidVehicle() {
-            return "Plate Number must be unique"
-        }
-        else if isNotValidVehicle() && isNotValidPlateNo() {
-            return "Invalid Plate Number"
+        } else if isNotBike() && plateNoExist() {
+            return "Plate Number already taken"
         } else {
-            return ""
+            return String()
         }
     }
 }

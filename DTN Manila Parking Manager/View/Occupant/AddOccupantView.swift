@@ -47,7 +47,10 @@ struct AddOccupantView: View {
                     }
                     ToolbarItem (placement: .confirmationAction){
                         Button {
-                            if !validation.validationComplete() {
+                            validation.occupants = dataModel.occupants
+                            
+
+                            if validation.complete() {
                                 let newOccupant = Occupant(
                                     id: validation.occupant.id,
                                     name: validation.occupant.name,
@@ -64,6 +67,7 @@ struct AddOccupantView: View {
                             } else {
                                 showErrors = true 
                             }
+
                             
                         } label: {
                             Text(Buttons.done)
